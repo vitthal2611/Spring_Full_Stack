@@ -1,0 +1,57 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="homeadr" class="com.mkyong.core.Address">
+		<property name="pin" value="411023"></property>
+		<property name="city" value="Mumbai"></property>
+		<property name="country" value="India"></property>
+	</bean>
+
+
+	<bean id="officeadr" class="com.mkyong.core.Address">
+		<property name="pin" value="411044"></property>
+		<property name="city" value="Pune-Pune"></property>
+		<property name="country" value="India"></property>
+	</bean>
+
+	<bean name="empBean" class="com.mkyong.core.Employee">
+		<property name="fname" value="Fname"></property>
+		<property name="id" value="10"></property>
+		<property name="lname" value="lname"></property>
+		<property name="adr">
+			<list>
+				<ref bean="homeadr" />
+				<ref bean="officeadr" />
+
+			</list>
+
+		</property>
+	</bean>
+	
+	
+	<bean id="triangBean" class="com.mkyong.core.Triangle" autowire="byType">
+	
+	</bean>
+	
+	<bean id="pointAA" class="com.mkyong.core.Point">
+	<property name="x" value="0"></property>
+	<property name="y" value="1"></property>
+	</bean>
+	
+	<!-- <bean id="pointB" class="com.mkyong.core.Point">
+	<property name="x" value="5"></property>
+	<property name="y" value="15"></property>
+	</bean>
+	
+	<bean id="pointC" class="com.mkyong.core.Point">
+	<property name="x" value="05"></property>
+	<property name="y" value="15"></property>
+	</bean> -->
+
+
+
+
+</beans>
